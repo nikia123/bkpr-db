@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.favBtn {
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    width: 5rem;
+    height: 5rem;
+
+    &Home {
+        @extend .favBtn;
+    }
+}

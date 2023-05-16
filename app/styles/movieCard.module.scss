@@ -1,0 +1,100 @@
+@use "variables" as *;
+
+.movieCard {
+    position: relative;
+    background-color: transparent;
+    padding: 0;
+    border: 1px solid transparent;
+
+    h3,
+    p,
+    button {
+        display: none;
+        z-index: 600;
+    }
+
+    .posterWrapper {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        position: relative;
+        z-index: 500;
+
+        .moviePoster {
+            opacity: 1;
+            z-index: inherit;
+        }
+    }
+
+    *:not( .shelfWrapper ) {
+        z-index: 100;
+    }
+
+    .shelfWrapper {
+        aspect-ratio: 19 / 4;
+        position: absolute;
+        display: none;
+        z-index: 1;
+
+        @media (min-width: 896px) {
+            display: block;
+            bottom: -16%;
+            left: -14%;
+            width: 140%;
+        }
+    }
+
+
+
+    @media (min-width: 896px) {
+        width: 80%;
+        max-width: 160px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: solid 1px white;
+
+            h3,
+            p,
+            button {
+                display: block;
+                position: absolute;
+                color: white;
+            }
+
+            h3 {
+                text-align: center;
+                font-size: 0.8rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                line-height: normal;
+
+            }
+
+            p {
+                top: -3%;
+                left: 3%;
+                background-color: black;
+                padding: 0.3rem 0.8rem;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+
+            button {
+                top: -5%;
+                right: -8%;
+                transform: rotate(0.04turn);
+            }
+
+            .posterWrapper {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 200px;
+    }
+    
+}

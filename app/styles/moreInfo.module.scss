@@ -1,0 +1,152 @@
+@use "variables" as *;
+
+.moreInfoCtr {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 50;
+
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 7rem;
+
+    padding: 8rem 2rem;
+    margin: 0 auto 4rem;
+    max-width: 880px;
+
+
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .subHeaderInfo {
+
+        display: flex;
+        justify-content: center;
+
+        p:nth-child(1) {
+            border-right: 1px solid white;
+        }
+
+        p:nth-child(2) {
+            border-left: 1px solid white;
+        }
+
+        p {
+            background-color: black;
+            padding: 0 0.5rem;
+            font-size: 1rem;
+            
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+
+    .posterImgWrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+        aspect-ratio: 2 / 3;
+    }
+
+    .stickerWrapper {
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        border-radius: 75%;
+        transform: rotate(0.04turn);
+
+        @media (min-width: 500px) {
+            top: 12rem;
+            right: 5rem;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+    }
+
+    @media (min-width: 500px) {
+        padding: 8rem 4rem;
+        margin: 0 auto 4rem;
+        max-width: 550px;
+        
+        h1 {
+            font-size: 1.5rem;
+            line-height: 1.9rem;
+        }
+
+        .subHeaderInfo {
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        .posterImgWrapper {
+            width: 70%;
+        }
+    }
+
+    @media (min-width: 896px) {
+        margin-top: 6rem;
+        max-width: 880px;
+        display: grid;
+        align-items: center;
+        padding: 10rem 6rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "poster poster title title"
+            "poster poster rating subHead"
+            "poster poster tagline tagline"
+            "poster poster summary summary"
+            "poster poster summary summary"
+            "poster poster . favBtn";
+
+        .posterImgWrapper {
+            grid-area: poster;
+            width: 85%;
+            margin-right: 2rem;
+        }
+        
+        h1 {
+            grid-area: title;
+        }
+
+        .subHeaderInfo {
+            grid-area: subHead;
+            height: fit-content;
+            margin-left: 2rem;
+        }
+
+        .rating {
+            grid-area: rating;
+            margin-left: 2rem;
+        }
+
+        .tagline {
+            grid-area: tagline;
+            margin-left: 2rem;
+        }
+
+        .summary {
+            grid-area: summary;
+            font-size: 1rem;
+            margin-left: 2rem;
+            
+        }
+
+        .stickerWrapper {
+            grid-area: favBtn;
+            top: 1rem;
+        }
+
+
+    }
+
+
+}

@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+.abtPage {
+    padding: 3rem;
+}
+
+.aboutCtr {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 50;
+
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 2rem;
+
+    padding: 3rem 2rem 6rem;
+    margin: 4rem auto 8rem;
+    max-width: 1096px;
+
+    h1 {
+        margin: 0 0 4rem;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    @media (min-width: 896px) {
+        border-radius: 4rem;
+        border: 3px solid white;
+
+        padding: 2rem 12rem 4rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}

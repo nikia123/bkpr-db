@@ -1,0 +1,108 @@
+@use "variables" as *;
+
+.movieTab {
+    padding: 0 1rem 1rem;
+
+        
+        h2 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            padding: 1rem 1rem 0;
+        }
+        
+
+        button {
+            cursor: pointer;
+        }
+
+        .headerButton {
+
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: .75rem 1rem;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            border-radius: 1rem;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+
+        }
+    
+    .movieCardContainer {
+        background-color: black;
+        padding: 0.5rem;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+
+        @media (min-width: 512px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (min-width: 896px) {
+            padding: 1rem 2rem 3rem;
+
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+
+            justify-items: center;
+        }
+
+        @media (min-width: 1440px) {
+
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+
+    &Popular {
+        @extend .movieTab;
+        background-color: $bkpr-orange;
+        color: black;
+    }
+
+    &InTheatres {
+        @extend .movieTab;
+        background-color: $bkpr-purple;
+        color: white;
+    }
+
+    &TopRated {
+        @extend .movieTab;
+        background-color: $bkpr-pink;
+        color: white;
+    }
+
+    &Upcoming {
+        @extend .movieTab;
+        background-color: $bkpr-red;
+        color: white;
+    }
+
+    &Favourites {
+        @extend .movieTab;
+        background-color: black;
+        color: white;
+
+        border-top: solid 2px white;
+        border-bottom: solid 2px white;
+    }
+
+    &Search {
+        @extend .movieTab;
+        background-color: black;
+        color: white;
+    }
+
+    @media (min-width: 896px) {
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}

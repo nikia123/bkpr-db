@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+.favouritesCtr {
+    position: relative;
+    box-sizing: border-box;
+    z-index: 50;
+
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 2rem;
+
+    padding: 3rem 2rem 6rem;
+    margin: 8rem auto 8rem;
+    max-width: 1096px;
+
+    
+
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .stickerWrapper {
+        aspect-ratio: 1 / 1;
+        width: 70px;
+        height: 70px;
+        transform: rotate(0.04turn);
+
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+    }
+
+    @media (min-width: 896px) {
+        border-radius: 4rem;
+        border: 3px solid white;
+
+        padding: 2rem 12rem 4rem;
+
+        p {
+            font-size: 1.4rem;
+        }
+
+        .stickerWrapper {
+            bottom: 15%;
+            right: 30%;
+        }
+    }
+}
